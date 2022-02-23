@@ -8,31 +8,29 @@ import dayjs, { weekToday } from '../../../utils/dayjs'
 export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, sayLove, songLyrics, oneMagazines, netEaseCloud, oneWord, dayEnglish } = data
 
-  let text = '早安呀，我可爱的鱼崽崽~\n'
+  let text = '早安啊，好气人的陈菲菲~\n'
 
   // 工作日/休息日，需要排除节假日
   const week = weekToday()
   if (['星期六', '星期日'].includes(week)) {
     text += `
-如果我鱼崽崽已经起床啦！崽崽向你说早安呦~，记得吃早饭呀😆\n
-嗯哼哼~今天可是${week}哦，上班别迟到了哦~`
+    如果陈菲菲还没起床！那就证明你太懒啦\n
+    既然今天是${week}，就让你再睡会懒觉，下次可不能啦~😝\n`
   }
   else {
     text += `
-如果我鱼崽崽还没起床呀！崽崽就等着鱼崽起床给我说早安呦🤣
-嗯哼~，既然今天是${week}，就让你再睡会懒觉~下次可不能啦~😝\n`
+如果陈菲菲已经起床啦！记得喝一杯水哦，今天可是${week}哦，上班别迟到了哦~`
   }
 
   // 添加笑话
-  if (caiHongpi) {
-    //     text += `
-    // 彩虹屁：
-    text += `
-${caiHongpi.content}\n`
-  }
+  //   if (caiHongpi) {
+  //     text += `
+  // ${caiHongpi.content}\n`
+  //   }
 
   if (sayLove) {
-    text += `
+    text += `\n
+今日情话~
 ${sayLove.content}\n`
   }
 
@@ -53,10 +51,10 @@ ${sayLove.content}\n`
   }
 
   // 添加一句一言
-  if (oneWord) {
-    text += `
-『一言』${oneWord.hitokoto}\n`
-  }
+  //   if (oneWord) {
+  //     text += `
+  // 『一言』${oneWord.hitokoto}\n`
+  //   }
 
   // 每日英语
   if (dayEnglish) {
